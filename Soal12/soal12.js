@@ -29,7 +29,36 @@ class Persegi extends BangunDatar {
     }
 
     set setsisi(x) {
-        this.carname = x;
+        this._sisi = x;
+    }
+}
+
+class Lingkarang extends BangunDatar {
+    constructor(nama, r) {
+        super(nama);
+        this._r = r;
+        this.luas = 3.14 * r * r;
+        this.keliling = 2 * 3.14 * r;
+    }
+
+    luas() {
+        this.luas = 3.14 * r * r;
+    }
+
+    keliling() {
+        this.keliling = 2 * 3.14 * r;
+    }
+
+    get getluas() {        
+        return this.luas;
+    }
+
+    get getkeliling() {
+        return this.keliling;
+    }
+
+    set setsisi(x) {
+        this._r = x;
     }
 }
 
@@ -38,3 +67,9 @@ console.log("Persegi");
 console.log("Sisi = "+kotak._sisi);
 console.log("Luas Persegi = "+kotak.luas);
 console.log("keliling Persegi = "+kotak.keliling);
+
+let bulat = new Lingkarang('bulat', 7);
+console.log("Lingkaran");
+console.log("Jari jari = "+bulat._r);
+console.log("Luas Lingkaran = "+bulat.luas);
+console.log("keliling Lingkaran = "+bulat.keliling);
